@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{87466C61-6717-6B49-14EF-064BA3656169}") = "Mobile Platformer", "Assembly-CSharp.csproj", "{A5F63353-CCB1-7334-F792-E3BDB7632915}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{A5F63353-CCB1-7334-F792-E3BDB7632915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5F63353-CCB1-7334-F792-E3BDB7632915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5F63353-CCB1-7334-F792-E3BDB7632915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5F63353-CCB1-7334-F792-E3BDB7632915}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
