@@ -3,13 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float speed = 5;
-    public float jumpHeight = 30;
-
-    public LayerMask whatIsGround;
-    private bool grounded;
-    public float groundCheckRadius;
-    public Transform groundCheck;
+    public float speed;
+    public float jumpHeight;
 
 	// Use this for initialization
 	void Start ()
@@ -25,35 +20,27 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
-        GroundCheck();
+        Movement();
     }
 
-
-    public void GoLeft()
+    void Movement()
     {
-        
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
-        
-    }
 
-    public void GoRight()
-    {
+        if (Input.GetAxisRaw("Horizontal") > 0.1)
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.forward * speed);
+        }
         
-            GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
-        
-    }
+        if (Input.GetAxisRaw("Horizontal") < -0.1)
+        {
+            GetComponent<Rigidbody2D>().AddForce(transform.forward * -speed);
+        }
 
-    public void JumpUp()
-    {
-        
+        if (Input.GetAxisRaw("Vertical") > 0.1)
+        {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-        
-    }
+        }
 
-
-    void GroundCheck()
-    {
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 
 }
