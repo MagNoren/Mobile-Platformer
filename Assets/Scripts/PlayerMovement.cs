@@ -45,9 +45,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public void JumpUp()
     {
-        
+        if (grounded)
+        {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-        
+        }
     }
 
 
